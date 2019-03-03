@@ -42,10 +42,11 @@ main(void)
     before=after=0;
 
     gintr=*((struct gatedesc *)&intr);
-    SETGATE(gintr, 0,1,2,3);
+    //SETGATE(gintr, 0,1,2,3);
+    SETGATE(gintr, 1, 2, 3, 0);
     intr=*(unsigned *)&(gintr);
     printf("intr is 0x%x\n",intr);
-    printf("gintr is 0x%llx\n",gintr);
+    // printf("gintr is 0x%llx\n",gintr);
     
     return 0;
 }
